@@ -6,13 +6,17 @@ Filename globbing like the python glob module with minor differences:
 * check that link targets exist, not just links
 """
 
-import os, re, fnmatch
-import util
+import os
+import re
+import fnmatch
+from pymake import util
 
 _globcheck = re.compile('[[*?]')
 
+
 def hasglob(p):
     return _globcheck.search(p) is not None
+
 
 def glob(fsdir, path):
     """
@@ -35,9 +39,11 @@ def glob(fsdir, path):
         if not os.path.isdir(fspath):
             continue
 
-        r.extend((util.normaljoin(dir, found) for found in globpattern(fspath, leaf)))
+        r.extend((util.normaljoin(dir, found)
+                  for found in globpattern(fspath, leaf)))
 
     return r
+
 
 def globpattern(dir, pattern):
     """

@@ -34,7 +34,10 @@ coming.
 """
 
 import logging, re, os, sys
-import data, functions, util, parserdata
+from pymake import data
+from pymake import functions
+from pymake import util
+from pymake import parserdata
 from pymake import errors
 
 _log = logging.getLogger('pymake.parser')

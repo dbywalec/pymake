@@ -4,8 +4,13 @@ A representation of makefile data structures.
 
 import logging, re, os, sys
 from functools import reduce
-import parserdata, parser, functions, process, util, implicit
-import globrelative
+from pymake import parserdata
+from pymake import parser
+from pymake import functions
+from pymake import process
+from pymake import util
+from pymake import implicit
+from pymake.globrelative import glob
 from pymake import errors
 
 try:

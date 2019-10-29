@@ -11,7 +11,9 @@ import site
 from collections import deque
 # XXXkhuey Work around http://bugs.python.org/issue1731717
 subprocess._cleanup = lambda: None
-import command, util
+
+from pymake import command
+from pymake import util
 from pymake import errors
 if sys.platform=='win32':
     import win32process

@@ -1,7 +1,9 @@
 from __future__ import print_function
 
 import logging, re, os
-import data, parser, util
+from pymake import data
+from pymake import parser
+from pymake import util
 from pymake.globrelative import hasglob, glob
 from pymake import errors
 
